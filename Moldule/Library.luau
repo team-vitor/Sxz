@@ -17,7 +17,7 @@ function Library:Setup()
 		Folder = "Sxz",
 		Size = UDim2.fromOffset(580, 460),
 		Transparent = true,
-		Theme = "Sxz",
+		Theme = "Blue",
 		Resizable = true,
 		SideBarWidth = 200,
 		Background = "",
