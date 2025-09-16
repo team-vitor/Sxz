@@ -17,7 +17,7 @@ function Library:Setup()
 		Folder = "Sxz",
 		Size = UDim2.fromOffset(580, 460),
 		Transparent = true,
-		Theme = "Blue",
+		Theme = "DarkBlue",
 		Resizable = true,
 		SideBarWidth = 200,
 		Background = "",
@@ -123,5 +123,17 @@ function Library:SetupAboutUs(AboutUs)
 		end,
 	})
 end
+
+WindUI:AddTheme({
+    Name = "DarkBlue",
+    Accent = "#1e40af",       -- acento vibrante (azul-royal)
+    Dialog = "#0b1220",       -- diálogo/containers (muito escuro, com tom azul)
+    Outline = "#cfe8ff",      -- contornos suaves (leve tom azul-claro)
+    Text = "#F8FAFC",         -- texto (quase branco, mais suave)
+    Placeholder = "#98A8C9",  -- placeholder (cinza-azulado)
+    Background = "#071028",   -- fundo principal (navy muito escuro)
+    Button = "#123e6b",       -- botões (azul profundo)
+    Icon = "#8fbfff",         -- ícones (azul claro para destaque)
+})
 
 return Library
