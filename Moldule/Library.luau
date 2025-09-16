@@ -6,14 +6,16 @@ Library.Async = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/re
 
 local UI = Library.Async --// Shortened
 
-local Window = nil
+Library.Window = nil
 
 function Library:Setup()
-	local version = LRM_ScriptVersion and "v" .. table.concat(LRM_ScriptVersion:split(""), ".") or "Dev Version"
-	Window = UI:CreateWindow({
+	local version = (typeof(LRM_ScriptVersion) == "string" and "v" .. table.concat(LRM_ScriptVersion:split(""), "."))
+		or "Dev Version"
+
+	self.Window = UI:CreateWindow({
 		Title = "Sxz Hub",
 		Icon = "rbxassetid://128278170341835",
-		Author = (premium and "Premium" or " Grow a Graden") .. " | " .. version,
+		Author = ((premium and "Premium") or "Grow a Garden") .. " | " .. version,
 		Folder = "Sxz",
 		Size = UDim2.fromOffset(580, 460),
 		Transparent = true,
@@ -33,18 +35,17 @@ function Library:Setup()
 		},
 	})
 
-	return Window
+	return self.Window
 end
 
 function Library:CreateTab(Name, Icon)
-	local Window = Window or self:Setup()
-
-	if not Window then
-		error("[Library]: Failed to find Window")
+	local window = self.Window or self:Setup()
+	if not window then
+		error("[Library]: Failed to create/find Window")
 		return
 	end
 
-	local Tab = Window:Tab({
+	local Tab = window:Tab({
 		Title = Name,
 		Icon = Icon,
 		Locked = false,
@@ -54,59 +55,40 @@ function Library:CreateTab(Name, Icon)
 end
 
 function Library:CreateSection(Tab, Title, Size)
-	local Section = Tab:Section({
+	return Tab:Section({
 		Title = Title,
 		TextXAlignment = "Left",
 		TextSize = Size or 17,
 	})
-
-	return Section
 end
 
 function Library:CreateToggle(Tab, Table)
-	local Toggle = Tab:Toggle(Table)
-
-	return Toggle
+	return Tab:Toggle(Table)
 end
 
 function Library:CreateButton(Tab, Table)
-	local Button = Tab:Button(Table)
-
-	return Button
+	return Tab:Button(Table)
 end
 
 function Library:CreateSlider(Tab, Table)
-	local Slider = Tab:Slider(Table)
-
-	return Slider
+	return Tab:Slider(Table)
 end
 
 function Library:CreateDropdown(Tab, Table)
-	local Dropdown = Tab:Dropdown(Table)
-
-	return Dropdown
+	return Tab:Dropdown(Table)
 end
 
 function Library:CreateInput(Tab, Table)
-	local Input = Tab:Input(Table)
-
-	return Input
+	return Tab:Input(Table)
 end
 
 --// Special Setups
 function Library:SetupAboutUs(AboutUs)
-	local Window = Window or self:Setup()
-
-	if not Window then
-		error("[Library]: Failed to find Window")
+	local window = self.Window or self:Setup()
+	if not window then
+		error("[Library]: Failed to create/find Window")
 		return
 	end
-
-	-- AboutUs:Paragraph({
-	-- 	Title = "Who Are We?",
-	-- 	Icon = "user-circle",
-	-- 	Desc = "sxz  Hub a flexible and powerful script hub for Roblox, designed to enhance your gaming experience with a variety of features and tools.",
-	-- })
 
 	AboutUs:Paragraph({
 		Title = "Discord Invites",
@@ -118,22 +100,25 @@ function Library:SetupAboutUs(AboutUs)
 		Title = "Discord Link (Click to Copy)",
 		Icon = "link",
 		Callback = function()
-			setclipboard("discord.gg/")
-			Library:Notify({ Title = "Copied!", Content = "Discord link copied!", Duration = 3 })
+			if setclipboard then
+				setclipboard("discord.gg/")
+				Library:Notify({ Title = "Copied!", Content = "Discord link copied!", Duration = 3 })
+			end
 		end,
 	})
 end
 
-WindUI:AddTheme({
+-- Registrar tema custom
+UI:AddTheme({
     Name = "DarkBlue",
     Accent = "#1e40af",       -- acento vibrante (azul-royal)
-    Dialog = "#0b1220",       -- diálogo/containers (muito escuro, com tom azul)
-    Outline = "#cfe8ff",      -- contornos suaves (leve tom azul-claro)
-    Text = "#F8FAFC",         -- texto (quase branco, mais suave)
+    Dialog = "#0b1220",       -- containers (muito escuro, tom azul)
+    Outline = "#cfe8ff",      -- contornos suaves
+    Text = "#F8FAFC",         -- texto (quase branco)
     Placeholder = "#98A8C9",  -- placeholder (cinza-azulado)
-    Background = "#071028",   -- fundo principal (navy muito escuro)
-    Button = "#123e6b",       -- botões (azul profundo)
-    Icon = "#8fbfff",         -- ícones (azul claro para destaque)
+    Background = "#071028",   -- fundo principal
+    Button = "#123e6b",       -- botões
+    Icon = "#8fbfff",         -- ícones
 })
 
 return Library
