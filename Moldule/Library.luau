@@ -1,4 +1,4 @@
---// Note: This is WindUI, not a custom gui library by phantom flux.
+--// Note: Wind UI Remake (Sxz Edition)
 
 local Library = {}
 Library.__index = Library
@@ -14,12 +14,12 @@ function Library:Setup()
 
 	self.Window = UI:CreateWindow({
 		Title = "Sxz Hub",
-		Icon = "rbxassetid://128278170341835",
+		Icon = "rbxassetid://",
 		Author = ((premium and "Premium") or "Grow a Garden") .. " | " .. version,
 		Folder = "Sxz",
 		Size = UDim2.fromOffset(580, 460),
 		Transparent = true,
-		Theme = "DarkBlue",
+		Theme = "Dark",
 		Resizable = true,
 		SideBarWidth = 200,
 		Background = "",
@@ -41,7 +41,7 @@ end
 function Library:CreateTab(Name, Icon)
 	local window = self.Window or self:Setup()
 	if not window then
-		error("[Library]: Failed to create/find Window")
+		error("[Sxz Library]: Failed to create/find Window")
 		return
 	end
 
@@ -86,7 +86,7 @@ end
 function Library:SetupAboutUs(AboutUs)
 	local window = self.Window or self:Setup()
 	if not window then
-		error("[Library]: Failed to create/find Window")
+		error("[Sxz Library]: Failed to create/find Window")
 		return
 	end
 
@@ -101,24 +101,13 @@ function Library:SetupAboutUs(AboutUs)
 		Icon = "link",
 		Callback = function()
 			if setclipboard then
-				setclipboard("discord.gg/")
-				Library:Notify({ Title = "Copied!", Content = "Discord link copied!", Duration = 3 })
+				setclipboard("discord.gg/SxzHub")
+				if Library.Notify then
+					Library:Notify({ Title = "Copied!", Content = "Discord link copied!", Duration = 3 })
+				end
 			end
 		end,
 	})
 end
 
--- Registrar tema custom
-UI:AddTheme({
-    Name = "DarkBlue",
-    Accent = "#1e40af",       -- acento vibrante (azul-royal)
-    Dialog = "#0b1220",       -- containers (muito escuro, tom azul)
-    Outline = "#cfe8ff",      -- contornos suaves
-    Text = "#F8FAFC",         -- texto (quase branco)
-    Placeholder = "#98A8C9",  -- placeholder (cinza-azulado)
-    Background = "#071028",   -- fundo principal
-    Button = "#123e6b",       -- botões
-    Icon = "#8fbfff",         -- ícones
-})
-
-return Library
+return Library -- Sxz Edition
