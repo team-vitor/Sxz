@@ -2384,21 +2384,3 @@ SpeedHubLib.Themes = {
 }
 
 return SpeedHubLib
-
-
-
-
-Themes = {
-Indigo={
-Name="Indigo",
-Accent="#3730a3",
-Dialog="#1e1b4b",
-Outline="#c7d2fe",
-Text="#f1f5f9",
-Placeholder="#a5b4fc",
-Background="#0f0a2e",
-Button="#4f46e5",
-Icon="#6366f1",
-},
-}
-
