@@ -1,11 +1,13 @@
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 
+LocalPlayer:WaitForChild("PlayerGui") -- espera PlayerGui estar pronto
+
 local gui = Instance.new("ScreenGui")
 gui.Name = "FishItBlocker"
 gui.ResetOnSpawn = false
 gui.IgnoreGuiInset = true
-gui.Parent = LocalPlayer:WaitForChild("PlayerGui")
+gui.Parent = LocalPlayer.PlayerGui
 
 local bg = Instance.new("Frame")
 bg.Size = UDim2.new(1,0,1,0)
