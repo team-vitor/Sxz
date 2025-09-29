@@ -17,7 +17,7 @@ local scripts = {
     [4442272183] = "https://raw.githubusercontent.com/team-vitor/Sxz/refs/heads/main/Scripts/bloxfruit.luau",
     [7449423635] = "https://raw.githubusercontent.com/team-vitor/Sxz/refs/heads/main/Scripts/bloxfruit.luau",
     [122478697296975] = "https://raw.githubusercontent.com/team-vitor/Sxz/refs/heads/main/Scripts/bloxfruit.luau",
-    [10260193230] = "https://raw.githubusercontent.com/team-vitor/Sxz/refs/heads/main/Scripts/servervipfinder.luau",
+    [10260193230] = "https://raw.githubusercontent.com/team-vitor/Sxz/refs/heads/main/Scripts/ServerVipFinder.luau",
     [126509999114328] = "https://raw.githubusercontent.com/team-vitor/Sxz/refs/heads/main/Scripts/99nights.luau",
     [79546208627805]  = "https://raw.githubusercontent.com/team-vitor/Sxz/refs/heads/main/Scripts/99nights.luau",
     [127742093697776] = "https://raw.githubusercontent.com/team-vitor/Sxz/refs/heads/main/Scripts/pvsb.luau",
@@ -36,7 +36,7 @@ end
 if scripts[placeId] then
     loadScript(scripts[placeId])
 elseif UniverseID == 7709344486 then
-    loadScript("https://raw.githubusercontent.com/team-vitor/Sxz/refs/heads/main/Scripts/servervipfinder.luau")
+    loadScript("https://raw.githubusercontent.com/team-vitor/Sxz/refs/heads/main/Scripts/ServerVipFinder.luau")
 else
     StarterGui:SetCore("SendNotification", {
         Title = "Sxz Hub Loader",
