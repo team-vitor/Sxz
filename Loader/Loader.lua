@@ -13,9 +13,9 @@ local placeId = game.PlaceId
 local UniverseID = HttpService:JSONDecode(game:HttpGet("https://apis.roblox.com/universes/v1/places/"..placeId.."/universe")).universeId
 
 local scripts = {
-    [2753915549] = "https://raw.githubusercontent.com/team-vitor/Sxz/refs/heads/main/Scripts/bloxfruit.luau",
-    [4442272183] = "https://raw.githubusercontent.com/team-vitor/Sxz/refs/heads/main/Scripts/bloxfruit.luau",
-    [7449423635] = "https://raw.githubusercontent.com/team-vitor/Sxz/refs/heads/main/Scripts/bloxfruit.luau",
+    [2753915549] = "https://raw.githubusercontent.com/team-vitor/Sxz/refs/heads/main/Scripts/BloxFruit.luau",
+    [4442272183] = "https://raw.githubusercontent.com/team-vitor/Sxz/refs/heads/main/Scripts/BloxFruit.luau",
+    [7449423635] = "https://raw.githubusercontent.com/team-vitor/Sxz/refs/heads/main/Scripts/BloxFruit.luau",
     [122478697296975] = "https://raw.githubusercontent.com/team-vitor/Sxz/refs/heads/main/Scripts/bloxfruit.luau",
     [10260193230] = "https://raw.githubusercontent.com/team-vitor/Sxz/refs/heads/main/Scripts/ServerVipFinder.luau",
     [126509999114328] = "https://raw.githubusercontent.com/team-vitor/Sxz/refs/heads/main/Scripts/99nights.luau",
