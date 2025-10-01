@@ -35,7 +35,7 @@ end
 
 if scripts[placeId] then
     getgenv().ModeKaitun = "Fruit Farm"
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/team-vitor/Sxz/refs/heads/main/Loader/Loader.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/team-vitor/Sxz/refs/heads/main/Kaituns/fruit-farm.luau"))()
     loadScript(scripts[placeId])
 elseif UniverseID == 7709344486 then
     loadScript("https://raw.githubusercontent.com/team-vitor/Sxz/refs/heads/main/Scripts/ServerVipFinder.luau")
